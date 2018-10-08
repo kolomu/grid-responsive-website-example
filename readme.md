@@ -5,5 +5,8 @@
 * pexels for copyright free images
 * mobile first approach
 
-Thanks for this tutorial TraversyMedia
-Source: https://www.youtube.com/watch?v=M3qBpPw77qo
+
+**Source**
+Traversy Media thanks for the tutorial.
+
+source: https://www.youtube.com/watch?v=M3qBpPw77qo
