@@ -1,0 +1,185 @@
+/* Core Styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvatica, sans-serif;
+    background: #333;
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+img {
+    display: block;
+     /* Shrink image size to container */
+    width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 1em 0;
+}
+
+p {
+    margin: 0;
+    padding: 1em 0;
+}
+
+.btn {
+    /* block would use element with full width and height because we havent specified it, thats why inline-block 
+    which takes the best of both worlds (only the size from inline-element but also block it) */
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    padding: 1em 2em;
+    border: 1px solid #555;
+    margin: 0.5em 0;
+}
+
+.btn:hover {
+    background: #eaeaea;
+    color: #333;
+}
+
+/* Header Showcase */
+#showcase {
+    min-height: 450px;
+    color: #fff;
+    text-align: center;
+}
+
+#showcase .bg-image {
+    /* position absolute because it gets over the showcase div */
+    position: absolute;
+    background: #333 url('https://images.pexels.com/photos/247791/pexels-photo-247791.png?dl&fit=crop&crop=entropy&w=1920&h=1054');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Size is required or else nothing will be shown */
+    width: 100%;
+    /* We are placing it on top of it thats why this need to be the same height as showcase */
+    height: 450px;
+    /* So that the text is shown above the image (standard this img would have higher z-index than paragraph) */
+    z-index: -1;
+    /* Fade the image out a little or else the text becomes "unreadable" */
+    opacity: 0.4;
+}
+
+#showcase h1 {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#showcase .content-wrap,
+#section-a .content-wrap
+{
+    padding: 0 1.5em;
+}
+
+/* Section A */
+#section-a {
+    background: #eaeaea;
+    color: #333;
+    padding-bottom: 2em;
+}
+
+/* Section B */
+#section-b {
+    padding: 2em 1em 1em;
+}
+
+#section-b ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#section-b li {
+    margin-bottom: 1em;
+    background: white;
+    color: #333;
+}
+
+.card-content {
+    /* Padding for the cards in seperate class because cards (spacing) should be reusable in other places */
+    padding: 1.5em;
+}
+
+/* Section C */
+#section-c {
+    background: white;
+    color: #333;
+    padding: 2em;
+}
+
+/* Section D - Boxes */
+#section-d .box {
+    padding: 2em;
+    color: #fff;
+}
+
+#section-d .box:first-child {
+    background: #2690d4;
+}
+
+/* Footer */
+#main-footer {
+    padding: 2em;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+#main-footer a {
+    color: #2690d4;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media(min-width: 700px) {
+    .grid {
+        display: grid;
+        /* 4 fractions of 1 fractions 
+        everything we applied .grid is put into the first column */
+        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr; 
+        /* repeat(3, 1fr) -> 1fr 1fr 1fr */
+        /* minmax when the size is smaller than auto then we want this to be the size 25em 
+           e.g. sizing of the middle 2 frs get changed at specific condition */
+    }
+
+    /* For the text effect (2 columns) in Web-Application & Development */
+    #section-a .content-text {
+        columns: 2;
+        column-gap: 2em;
+    }
+
+    #section-a .content-text p {
+        padding-top: 0;
+    }
+
+    .content-wrap, 
+    #section-b ul {
+        /* should take range from 2 to 4 */
+        grid-column: 2/4;
+    }
+
+    .box, #main-footer div {
+        /* Each class is spanning 2 columns of the four grids */
+        grid-column: span 2;
+    }
+
+    #section-b ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #section-b li {
+        width: 31%;
+    }
+
+    .card img {
+        max-height: 150px;
+    }
+}
