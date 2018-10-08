@@ -5,9 +5,7 @@
 * pexels for copyright free images
 * mobile first approach
 
+**Source:** 
 
-**Source**
+Traversy Media - [Youtube - Grid CSS Responsive Website Layout - "Mobile First" Design](https://www.youtube.com/watch?v=M3qBpPw77qo)
 
-Traversy Media thanks for the tutorial.
-
-source: https://www.youtube.com/watch?v=M3qBpPw77qo
